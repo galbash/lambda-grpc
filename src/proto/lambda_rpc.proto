@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+import "google/rpc/status.proto";
+
+package lambdagrpc;
+
+message InvokeRequest {
+    google.protobuf.Any client_request = 1;
+}
+
+message InvokeResponse {
+    google.protobuf.Any client_response = 1;
+    google.rpc.Status status = 2;
+}
